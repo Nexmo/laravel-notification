@@ -1,0 +1,21 @@
+{
+    "name": "nexmo/laravel-notification",
+    "description": "Send SMS, WhatsApp, Viber and Facebook Messenger messages via Nexmo",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Heap",
+            "email": "michael.heap@vonage.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "nexmo/laravel": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nexmo\\": "src"
+        }
+    }
+}
