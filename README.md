@@ -13,7 +13,7 @@ To use this package, run `composer require nexmo/laravel-notification`. Once it 
 * `toNexmoViberServiceMessage`
 * `toNexmoSms`
 
-See [examples/Notification/MerryChristmas.php](examples/Notificatoin/MerryChristmas.php) for a complete example.
+See [examples/Notification/MerryChristmas.php](examples/Notification/MerryChristmas.php) for a complete example.
 
 To send a notification, specify the class name you'd like to use:
 
