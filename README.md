@@ -6,7 +6,7 @@ This package adds the ability to send notifications to WhatsApp, Facebook Messen
 
 ## Usage
 
-To use this package, run `composer require nexmo/laravel-notifications`. Once it completes, you can implement the following methods on your notification:
+To use this package, run `composer require nexmo/laravel-notification`. Once it completes, you can implement the following methods on your notification:
 
 * `toNexmoWhatsApp`
 * `toNexmoFacebook`
