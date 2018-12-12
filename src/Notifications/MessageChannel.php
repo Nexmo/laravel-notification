@@ -14,9 +14,11 @@ abstract class MessageChannel {
 
     public function send($notifiable, Notification $notification)
     {
-        if (! $to = $notifiable->routeNotificationFor(static::class)) {
+        if (! $to = $notifiable->routeNotificationFor($this->channelName)) {
             return;
         }
+
+        $this->channelName = str_replace('nexmo-', '', $this->channelName);
 
         $message = $notification->{$this->notificationMappingMethod}($notifiable);
 

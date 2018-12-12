@@ -15,7 +15,7 @@ To use this package, run `composer require nexmo/laravel-notification`. Once it 
 
 See [examples/Notification/MerryChristmas.php](examples/Notification/MerryChristmas.php) for a complete example.
 
-To send a notification, specify the class name you'd like to use:
+To send a notification, specify the channel you'd like to use:
 
 ```php
 // To a user
@@ -23,17 +23,24 @@ $user->notify(new \App\Notifications\MerryChristmas());
 
 // To any person
 Notification::route(
-    \Nexmo\Notifications\WhatsApp::class,
+    'nexmo-whatsapp',
     'YOUR_NUMBER'
 )->notify(new \App\Notifications\MerryChristmas());
 ```
+
+The available channels are:
+
+* `nexmo-sms`
+* `nexmo-whatsapp`
+* `nexmo-facebook`
+* `nexmo-viber_service_msg`
 
 As each notification receives a `$notifiable` (usually a user) it can decide how best to route the information. In this case, it checks the `via_whatsapp` property on the user and sends via WhatsApp if it's true. Otherwise it falls back to email
 
 ```
 public function via($notifiable)
 {
-    return $notifiable->via_whatsapp ? [\Nexmo\Notifications\WhatsApp::class] : ['mail'];
+    return $notifiable->via_whatsapp ? ['nexmo-whatsapp'] : ['mail'];
 }
 ```
 

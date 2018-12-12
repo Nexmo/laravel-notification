@@ -17,5 +17,12 @@
         "psr-4": {
             "Nexmo\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nexmo\\Notifications\\NexmoChannelServiceProvider"
+            ]
+        }
     }
 }
