@@ -18,20 +18,20 @@ abstract class MessageChannel {
             return;
         }
 
-        $this->channelName = str_replace('nexmo-', '', $this->channelName);
+        $this->nexmoChannelName = str_replace('nexmo-', '', $this->channelName);
 
         $message = $notification->{$this->notificationMappingMethod}($notifiable);
 
         $response = $this->sendMessage(
             $message->toNexmoApi(
-                $this->from($message->getFrom($this->channelName)),
+                $this->from($message->getFrom($this->nexmoChannelName)),
                 $this->to($to)
             )
         );
     }
 
     protected function toEndpoint($id, $field) {
-        return ['type' => $this->channelName, $field => $id];
+        return ['type' => $this->nexmoChannelName, $field => $id];
     }
 
     protected function to($id) {
