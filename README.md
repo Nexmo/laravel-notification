@@ -1,5 +1,7 @@
 # Nexmo / Laravel Notifications
 
+<img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
+
 Although Nexmo is [available in Laravel](https://laravel.com/docs/5.8/notifications#sms-notifications) as the default SMS provider, the next generation of Nexmo APIs will offer more communication channels. This package adds the ability to send notifications to WhatsApp, Facebook Messenger and Viber via Nexmo.
 
 *Note that the [Messages API](https://developer.nexmo.com/messages/overview) that this package uses has not yet had its stable release so both the API and this library are subject to change*
